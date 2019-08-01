@@ -1,7 +1,7 @@
 <template>
   <form class="card auth-card" @submit.prevent="onSubmit">
     <div class="card-content">
-      <span class="card-title">Домашняя бухгалтерия</span>
+      <span class="card-title">Облік власних витрат</span>
       <div class="input-field">
         <input
           id="email"
@@ -44,7 +44,7 @@
           v-model="name"
           :class="{ invalid: ($v.name.$dirty && !$v.name.required) }"
         />
-        <label for="name">Имя</label>
+        <label for="name">Ім'я</label>
         <small
           v-if="$v.name.$dirty && !$v.name.required"
           class="helper-text invalid"
@@ -53,21 +53,21 @@
       <p>
         <label>
           <input type="checkbox" v-model="agree" />
-          <span>С правилами согласен</span>
+          <span>С правилами згоден</span>
         </label>
       </p>
     </div>
     <div class="card-action">
       <div>
         <button class="btn waves-effect waves-light auth-submit" type="submit">
-          Зарегистрироваться
+          Зареєструватись
           <i class="material-icons right">send</i>
         </button>
       </div>
 
       <p class="center">
-        Уже есть аккаунт?
-        <router-link to="/login">Войти!</router-link>
+        У вас вже є акаунт?
+        <router-link to="/login">Увійти!</router-link>
       </p>
     </div>
   </form>
