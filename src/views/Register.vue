@@ -73,14 +73,14 @@
   </form>
 </template>
 <script>
-import { email, required, minLength } from "vuelidate/lib/validators";
+import { email, required, minLength } from 'vuelidate/lib/validators'
 
 export default {
-  name: "register",
+  name: 'register',
   data: () => ({
-    email: "",
-    password: "",
-    name: "",
+    email: '',
+    password: '',
+    name: '',
     agree: false
   }),
   validations: {
@@ -92,19 +92,20 @@ export default {
   methods: {
     async onSubmit() {
       if (this.$v.$invalid) {
-        this.$v.$touch();
-        return;
+        this.$v.$touch()
+        return
       }
       const formData = {
         email: this.email,
         password: this.password,
-        name: this.name
-      };
+        name: this.name,
+        locale: 'ua-UA'
+      }
       try {
-        await this.$store.dispatch("register", formData);
-        this.$router.push("/");
+        await this.$store.dispatch('register', formData)
+        this.$router.push('/')
       } catch (e) {}
     }
   }
-};
+}
 </script>

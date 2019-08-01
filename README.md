@@ -1,5 +1,7 @@
 # vue-crm
 
+[Project link is here](https://crm-budget.firebaseapp.com)
+
 ## Project setup
 ```
 npm install
